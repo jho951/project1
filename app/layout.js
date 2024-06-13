@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -10,8 +12,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang='en'>
+      <body className={inter.className}>
+        <header>
+          <Link href='/redirect' passHref>
+            리다이렉트
+          </Link>
+          <Link href='/test' passHref>
+            이외
+          </Link>
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
