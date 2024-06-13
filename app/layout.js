@@ -10,7 +10,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang='en'>
+      <header>
+        <Link href='/redirect' passHref>
+          리다이렉트
+        </Link>
+        <Link href='/test' passHref>
+          이외
+        </Link>
+      </header>
       <body className={inter.className}>{children}</body>
     </html>
   );
