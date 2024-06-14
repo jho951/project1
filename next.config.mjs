@@ -5,7 +5,13 @@ const nextConfig = {
   // 서버에서 응답을 압축할지 여부
   compress: true, // true (기본값) || false
   // 리소스 요청의 CORS(Cross-Origin Resource Sharing) 정책 제어
-  crossOrigin: "use-credentials ", // anonymous || use-credentials || undefined (기본값)
+  crossOrigin: "anonymous", // anonymous || use-credentials || undefined (기본값)
+  // 사용자 정의 빌드 디렉토리에 사용할 이름을 지정
+  distDir: "jhProject",
+  env: {
+    API_URL: process.env.API_URL,
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
   // 경로에 접근 시 페이지 변경
   async redirects() {
     return [
