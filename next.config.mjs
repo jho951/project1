@@ -2,6 +2,10 @@
 const nextConfig = {
   // 다른 페이지에 접근 시 basePath자동으로 적용
   basePath: "/test",
+  // 서버에서 응답을 압축할지 여부
+  compress: true, // true (기본값) || false
+  // 리소스 요청의 CORS(Cross-Origin Resource Sharing) 정책 제어
+  crossOrigin: "use-credentials ", // anonymous || use-credentials || undefined (기본값)
   // 경로에 접근 시 페이지 변경
   async redirects() {
     return [
