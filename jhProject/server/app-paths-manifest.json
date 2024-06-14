@@ -1,4 +1,6 @@
 {
+  "/page": "app/page.js",
   "/(test)/[slug]/page": "app/(test)/[slug]/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/redirect/page": "app/redirect/page.js",
+  "/rewrite/page": "app/rewrite/page.js"
 }
