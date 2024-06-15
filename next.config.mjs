@@ -46,6 +46,13 @@ const nextConfig = {
       },
     },
   },
+  // 애플리케이션 버전을 식별하기 위해 ID 생성
+  generateBuildId: async () => {
+    return process.env.BUILD_ID;
+  },
+  // HTTP ETag 생성 여부
+  generateEtags: true, // true (기본값) || false
+  // HTTP 요청을 처리하는 http.Agent의 옵션들을 설정
 };
 
 export default nextConfig;
