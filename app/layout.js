@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
         <header>
           <Link href='/redirect'>리다이렉트</Link>
           <Link href='/basePath'>테스트</Link>
+          <Link href='/'>Home</Link>
           <Link href='/env'>env</Link>
           <Link href='/rewrite'>리라이트</Link>
         </header>
