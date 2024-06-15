@@ -61,6 +61,10 @@ const nextConfig = {
     maxFreeSockets: 5, // 재사용 가능한 소켓의 최대 개수
     timeout: 60000, // 요청 타임아웃을 설정하여, 특정 시간 내에 응답이 없을 경우 요청을 종료
   },
+  // 실험적 기능 사용
+  experimental: {
+    instrumentationHook: false, // true || false
+  },
 };
 
 export default nextConfig;
