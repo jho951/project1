@@ -17,7 +17,7 @@ const nextConfig = {
       {
         source: "/redirect",
         destination: "/test/redirects",
-        permanent: true, // true: 클라이언트/검색 엔진에 리디렉션을 영구적으로 캐시하도록 지시하는 308 상태 코드를 사용 || false: 307 임시 상태 코드를 사용해 캐시되지 않도록 한다.
+        permanent: false, // true: 클라이언트/검색 엔진에 리디렉션을 영구적으로 캐시하도록 지시하는 308 상태 코드를 사용 || false: 307 임시 상태 코드를 사용해 캐시되지 않도록 한다.
       },
     ];
   },
@@ -28,6 +28,23 @@ const nextConfig = {
         destination: "/test/rewrites", // 사용자 접근 경로에서 변경할 경로
       },
     ];
+  },
+
+  eslint: {
+    // 빌드 중 ESLint를 무시할지 여부를 설정합니다.
+    ignoreDuringBuilds: false, // true||false
+    // 특정 디렉토리를 ESLint 검사를 위해 지정할 수 있습니다.
+    dirs: ["app", "public", "lib"], // 기본값 전체
+    // 특정 경로에서만 ESLint 검사를 실행할 수 있습니다. (dirs와 같이 사용은 드뭄)
+    // files: ["app/**/*.js", "app/**/*.jsx"],
+    // ESlint 커스텀
+    baseConfig: {
+      extends: ["eslint:recommended", "plugin:react/recommended"],
+      rules: {
+        "react/react-in-jsx-scope": "off",
+        "no-unused-vars": "warn",
+      },
+    },
   },
 };
 
