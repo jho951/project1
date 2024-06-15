@@ -46,6 +46,25 @@ const nextConfig = {
       },
     },
   },
+  // 애플리케이션 버전을 식별하기 위해 ID 생성
+  generateBuildId: async () => {
+    return process.env.BUILD_ID;
+  },
+  // HTTP ETag 생성 여부
+  generateEtags: true, // true (기본값) || false
+  // HTTP 요청을 처리하는 http.Agent의 옵션들을 설정
+  httpAgentOptions: {
+    // 같은 호스트로의 여러 요청에 대해 TCP 연결을 재사용 여부
+    keepAlive: true, // true (기본값) || false
+    keepAliveMsecs: 1000, // TCP 소켓의 keep-alive 패킷 간 간격
+    maxSockets: 10, // 최대 동시 소켓 연결 수
+    maxFreeSockets: 5, // 재사용 가능한 소켓의 최대 개수
+    timeout: 60000, // 요청 타임아웃을 설정하여, 특정 시간 내에 응답이 없을 경우 요청을 종료
+  },
+  // 실험적 기능 사용
+  experimental: {
+    instrumentationHook: false, // true || false
+  },
 };
 
 export default nextConfig;
