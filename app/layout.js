@@ -11,10 +11,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <header>
           <Link href='/redirect'>리다이렉트</Link>
-          <Link href='/basePath'>테스트</Link>
           <Link href='/'>Home</Link>
-          <Link href='/env'>env</Link>
-          <Link href='/rewrite'>리라이트</Link>
+          <Link href='/test/env'>env</Link>
+          <Link href='/rewrites'>리라이트</Link>
         </header>
         {children}
       </body>
