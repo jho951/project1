@@ -29,7 +29,7 @@ const nextConfig = {
       },
     ];
   },
-
+  // eslint 적용
   eslint: {
     // 빌드 중 ESLint를 무시할지 여부를 설정합니다.
     ignoreDuringBuilds: false, // true||false
@@ -37,14 +37,6 @@ const nextConfig = {
     dirs: ["app", "public", "lib"], // 기본값 전체
     // 특정 경로에서만 ESLint 검사를 실행할 수 있습니다. (dirs와 같이 사용은 드뭄)
     // files: ["app/**/*.js", "app/**/*.jsx"],
-    // ESlint 커스텀
-    baseConfig: {
-      extends: ["eslint:recommended", "plugin:react/recommended"],
-      rules: {
-        "react/react-in-jsx-scope": "off",
-        "no-unused-vars": "warn",
-      },
-    },
   },
   // 애플리케이션 버전을 식별하기 위해 ID 생성
   generateBuildId: async () => {
@@ -52,18 +44,16 @@ const nextConfig = {
   },
   // HTTP ETag 생성 여부
   generateEtags: true, // true (기본값) || false
-  // HTTP 요청을 처리하는 http.Agent의 옵션들을 설정
-  httpAgentOptions: {
-    // 같은 호스트로의 여러 요청에 대해 TCP 연결을 재사용 여부
-    keepAlive: true, // true (기본값) || false
-    keepAliveMsecs: 1000, // TCP 소켓의 keep-alive 패킷 간 간격
-    maxSockets: 10, // 최대 동시 소켓 연결 수
-    maxFreeSockets: 5, // 재사용 가능한 소켓의 최대 개수
-    timeout: 60000, // 요청 타임아웃을 설정하여, 특정 시간 내에 응답이 없을 경우 요청을 종료
-  },
   // 실험적 기능 사용
   experimental: {
     instrumentationHook: false, // true || false
+  },
+  // 페이지가 필요할 때만 로드되도록 설정하는 기능
+  onDemandEntries: {
+    // 페이지가 메모리에 유지되는 최대 시간(밀리초)
+    maxInactiveAge: 25 * 1000,
+    // 동시에 유지될 수 있는 페이지의 최대 수
+    pagesBufferLength: 2,
   },
 };
 
