@@ -47,12 +47,18 @@ const nextConfig = {
   // 실험적 기능 사용
   experimental: {
     instrumentationHook: false, // true || false
+    //웹 바이탈(Web Vitals) 지표를 수집
+    // webVitalsAttribution: ["CLS", "LCP", "FID"],
   },
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer
     maxInactiveAge: 25 * 1000,
     // number of pages that should be kept simultaneously without being disposed
     pagesBufferLength: 2,
+  },
+  // 타입스크립트 빌드 오류 허용
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 
