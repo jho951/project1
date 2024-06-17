@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: true,
   // 서버에서 응답을 압축할지 여부
   compress: true, // true (기본값) || false
   // 리소스 요청의 CORS(Cross-Origin Resource Sharing) 정책 제어
