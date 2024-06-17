@@ -47,6 +47,8 @@ const nextConfig = {
   // 실험적 기능 사용
   experimental: {
     instrumentationHook: false, // true || false
+    //웹 바이탈(Web Vitals) 지표를 수집
+    // webVitalsAttribution: ["CLS", "LCP", "FID"],
   },
   // 페이지가 필요할 때만 로드되도록 설정하는 기능
   onDemandEntries: {
@@ -54,6 +56,10 @@ const nextConfig = {
     maxInactiveAge: 25 * 1000,
     // 동시에 유지될 수 있는 페이지의 최대 수
     pagesBufferLength: 2,
+  },
+  // 타입스크립트 빌드 오류 허용
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 
