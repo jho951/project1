@@ -1,12 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  trailingSlash: true,
+  // 매핑 파일 빌드 시 작성여부
+  productionBrowserSourceMaps: true, // true || false (기본값)
+  // url 역슬래쉬 여부
+  trailingSlash: true, // true || false (기본값)
   // 서버에서 응답을 압축할지 여부
   compress: true, // true (기본값) || false
   // 리소스 요청의 CORS(Cross-Origin Resource Sharing) 정책 제어
   crossOrigin: "anonymous", // anonymous || use-credentials || undefined (기본값)
   // 사용자 정의 빌드 디렉토리에 사용할 이름을 지정
   distDir: "jhProject",
+  // 개발 모드 전용 기능
+  reactStrictMode: true, // true(기본값) || false
   // 환경변수 설정
   env: {
     API_URL: process.env.API_URL,
